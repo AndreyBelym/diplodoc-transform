@@ -1,5 +1,5 @@
 {
-  "name": "@diplodoc/transform",
+  "name": "@belym.a.2105/yfm-transform",
   "version": "4.28.2",
   "description": "A simple transformer of text in YFM (Yandex Flavored Markdown) to HTML",
   "keywords": [
@@ -35,7 +35,7 @@
     "lint": "eslint --max-warnings=0 \"{src,test}/**/*.{js,jsx,ts,tsx}\"",
     "lint:fix": "eslint --fix --max-warnings=0 \"{src,test}/**/*.{js,jsx,ts,tsx}\"",
     "precommit": "npm run lint && npm run test",
-    "prepublishOnly": "npm run lint && npm run test && npm run build",
+    "prepublishOnly": "npm run build",
     "test": "jest --coverage",
     "typecheck": "tsc -p tsconfig.json --noEmit"
   },

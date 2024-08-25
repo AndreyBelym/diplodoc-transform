@@ -413,6 +413,10 @@ const yfmTable: MarkdownItPluginCb = (md) => {
                 token.attrJoin(attr, 'true');
             }
 
+            const style = token.attrGet('style');
+
+            token.attrSet('style', `${style ? style + ';' : ''}border-collapse:collapse;border-spacing:0px`);
+
             token.map = [startLine, endOfTable];
 
             token = state.push('yfm_tbody_open', 'tbody', 1);
@@ -440,6 +444,9 @@ const yfmTable: MarkdownItPluginCb = (md) => {
                 for (let j = 0; j < cols.length; j++) {
                     const [begin, end] = cols[j];
                     token = state.push('yfm_td_open', 'td', 1);
+
+                    token.attrSet('style', 'border:1px solid rgb( 171 , 171 , 171 )');
+                    
                     cellsMap[i].push(token);
                     token.map = [begin.line, end.line];
 
