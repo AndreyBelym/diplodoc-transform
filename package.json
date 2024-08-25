@@ -1,6 +1,6 @@
 {
   "name": "@belym.a.2105/yfm-transform",
-  "version": "4.28.2",
+  "version": "4.29.0",
   "description": "A simple transformer of text in YFM (Yandex Flavored Markdown) to HTML",
   "keywords": [
     "markdown",

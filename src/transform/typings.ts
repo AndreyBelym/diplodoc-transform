@@ -56,6 +56,7 @@ export interface OptionsType {
     getPublicPath?: (options: OptionsType, href?: string) => string;
     renderInline?: boolean;
     cache?: CacheContext;
+    tableBorder?: string;
     [x: string]: unknown;
 }
 

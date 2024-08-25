@@ -357,7 +357,9 @@ const clearTokens = (tableStart: number, tokens: Token[]): void => {
     });
 };
 
-const yfmTable: MarkdownItPluginCb = (md) => {
+const yfmTable: MarkdownItPluginCb<{ tableBorder?: string; }> = (md, options) => {
+    const tdStyle = `border:${options?.tableBorder || '1px solid rgb( 171 , 171 , 171 )'}`;
+
     md.block.ruler.before(
         'code',
         pluginName,
@@ -445,8 +447,8 @@ const yfmTable: MarkdownItPluginCb = (md) => {
                     const [begin, end] = cols[j];
                     token = state.push('yfm_td_open', 'td', 1);
 
-                    token.attrSet('style', 'border:1px solid rgb( 171 , 171 , 171 )');
-                    
+                    token.attrSet('style', tdStyle);
+
                     cellsMap[i].push(token);
                     token.map = [begin.line, end.line];
 
